@@ -1,21 +1,23 @@
 #!/usr/bin/env python
 #
 """Test performance of BloomFilter at a set capacity and error rate."""
+import math
 import sys
+import time
+
 from pybloom import BloomFilter
-import bitarray, math, time
 
 def main(capacity=100000, request_error_rate=0.1):
-    f = BloomFilter(capacity=capacity, error_rate=request_error_rate)
+    f = BloomFilter(None, capacity=capacity, error_rate=request_error_rate)
     assert (capacity == f.capacity)
     start = time.time()
     for i in xrange(0, f.capacity):
-        f.add(i, skip_check=True)
+        f.add(i, check_existing=False)
     end = time.time()
     print "{:5.3f} seconds to add to capacity, {:10.2f} entries/second".format(
             end - start, f.capacity / (end - start))
-    oneBits = f.bitarray.count(True)
-    zeroBits = f.bitarray.count(False)
+    oneBits = f._bits_set()
+    zeroBits = f._bits_unset()
     #print "Number of 1 bits:", oneBits
     #print "Number of 0 bits:", zeroBits
     print "Number of Filter Bits:", f.num_bits

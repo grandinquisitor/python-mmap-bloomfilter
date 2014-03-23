@@ -7,12 +7,10 @@ import os
 from setuptools import setup, find_packages, Extension
 
 VERSION = '2.0.0'
-DESCRIPTION = "PyBloom: A Probabilistic data structure"
+DESCRIPTION = "pybloom-mmap"
 LONG_DESCRIPTION = """
-pybloom is a Python implementation of the bloom filter probabilistic data
-structure. The module also provides a Scalable Bloom Filter that allows a
-bloom filter to grow without knowing the original set size.
-"""
+pybloom-mmap is a Python implementation of the bloom filter probabilistic data
+structure using mmap."""
 
 CLASSIFIERS = filter(None, map(str.strip,
 """
@@ -26,20 +24,19 @@ Topic :: Software Development :: Libraries :: Python Modules
 """.splitlines()))
 
 setup(
-    name="pybloom",
+    name="pybloom-mmap",
     version=VERSION,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     classifiers=CLASSIFIERS,
     keywords=('data structures', 'bloom filter', 'bloom', 'filter',
-              'probabilistic', 'set'),
-    author="Jay Baird",
-    author_email="jay.baird@me.com",
-    url="http://github.com/jaybaird/python-bloomfilter/",
+              'probabilistic', 'set', 'mmap'),
+    author="AUTHOR",
+    author_email="AUTHOR_EMAIL",
+    url="http://yahoo.com",
     license="MIT License",
     packages=find_packages(exclude=['ez_setup']),
     platforms=['any'],
     test_suite="pybloom.tests",
-    zip_safe=True,
-    install_requires=['bitarray>=0.3.4']
+    zip_safe=True
 )
