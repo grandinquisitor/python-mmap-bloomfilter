@@ -7,7 +7,7 @@ import os
 from setuptools import setup, find_packages, Extension
 
 VERSION = '2.0.0'
-DESCRIPTION = "pybloom-mmap"
+DESCRIPTION = "pybloommap"
 LONG_DESCRIPTION = """
 pybloom-mmap is a Python implementation of the bloom filter probabilistic data
 structure using mmap."""
@@ -24,7 +24,7 @@ Topic :: Software Development :: Libraries :: Python Modules
 """.splitlines()))
 
 setup(
-    name="pybloom-mmap",
+    name="pybloommap",
     version=VERSION,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
@@ -37,6 +37,6 @@ setup(
     license="MIT License",
     packages=find_packages(exclude=['ez_setup']),
     platforms=['any'],
-    test_suite="pybloom.tests",
+    test_suite="pybloommap.tests",
     zip_safe=True
 )

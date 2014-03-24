@@ -1,4 +1,4 @@
-pybloom-mmap is a module that includes a Bloom Filter data structure using mmap.
+pybloommap is a module that implements a Bloom Filter data structure using mmap
 
 Bloom filters are great if you understand what amount of bits you need to set
 aside early to store your entire set.
@@ -11,6 +11,8 @@ is the number of bits and p is the false positive probability. When capacity
 is reached a new filter is then created exponentially larger than the last
 with a tighter probability of false positives and a larger number of hash
 functions.
+
+Based on https://github.com/jaybaird/python-bloomfilter
 
 >>> from pybloom import BloomFilter
 >>> f = BloomFilter(None, capacity=1000, error_rate=0.001)

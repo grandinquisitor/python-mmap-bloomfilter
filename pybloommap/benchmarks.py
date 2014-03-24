@@ -5,7 +5,7 @@ import math
 import sys
 import time
 
-from pybloom import BloomFilter
+from pybloommap import BloomFilter
 
 def main(capacity=100000, request_error_rate=0.1):
     f = BloomFilter(None, capacity=capacity, error_rate=request_error_rate)

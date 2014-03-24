@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest import TestSuite
 
-from pybloom import BloomFilter
+from pybloommap import BloomFilter
 
 def additional_tests():
     proj_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
